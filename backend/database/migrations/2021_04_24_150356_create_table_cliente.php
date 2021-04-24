@@ -20,7 +20,7 @@ class CreateTableCliente extends Migration
             $table->string('clie_email', 255);
             $table->date('clie_data_nascimento');
             $table->string('clie_celular', 255);
-            $table->string('clie_cep', 8);
+            $table->string('clie_cep', 9);
             $table->string('clie_endereco', 255);
             $table->string('clie_complemento', 255);
             $table->string('clie_bairro', 255);

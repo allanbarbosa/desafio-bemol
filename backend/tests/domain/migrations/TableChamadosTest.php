@@ -3,11 +3,25 @@ declare(strict_types=1);
 
 namespace Tests\domain;
 
+use App\Models\ChamadosModel;
+use App\Models\ClienteModel;
+use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Support\Facades\Schema;
 use Tests\TestCase;
 
 class TableChamadosTest extends TestCase
 {
+    use RefreshDatabase, WithFaker;
+
+    public function setUp(): void
+    {
+        parent::setUp();
+
+        $this->cliente = ClienteModel::factory()->create();
+        $this->chamados = ChamadosModel::factory()->create();
+    }
+
     public function test_table_chamados_exists()
     {
         $this->assertTrue(Schema::hasTable('chamados'));
@@ -23,5 +37,12 @@ class TableChamadosTest extends TestCase
         $this->assertTrue(Schema::hasColumn('chamados', 'cham_canal_criado'));
         $this->assertTrue(Schema::hasColumn('chamados', 'cham_canal_encerramento'));
         $this->assertTrue(Schema::hasColumn('chamados', 'cham_encerrado_em'));
+    }
+
+    public function test_o_chamado_tem_um_cliente()
+    {
+        $this->assertInstanceOf(ClienteModel::class, $this->chamados->cliente);
+
+        $this->assertEquals(1, $this->chamados->cliente->count());
     }
 }
