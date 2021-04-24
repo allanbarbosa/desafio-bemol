@@ -19,7 +19,7 @@ class CreateTableUsuario extends Migration
             $table->string('usua_password', 255);
             $table->dateTime('usua_renew_password')->default(now()->addMonths(3));
             $table->boolean('usua_first_access')->default(true);
-            $table->dateTime('usua_email_verfied_at')->nullable();
+            $table->dateTime('usua_email_verified_at')->nullable();
             $table->unsignedBigInteger('cliente_id');
             $table->timestamps();
 

@@ -15,10 +15,11 @@ class CreateTableCliente extends Migration
     {
         Schema::create('cliente', function (Blueprint $table) {
             $table->id('clie_id');
+            $table->string('clie_nome_completo', 255);
             $table->string('clie_cpf', 255);
             $table->string('clie_email', 255);
             $table->date('clie_data_nascimento');
-            $table->string('clie_eclular', 255);
+            $table->string('clie_celular', 255);
             $table->string('clie_cep', 8);
             $table->string('clie_endereco', 255);
             $table->string('clie_complemento', 255);
