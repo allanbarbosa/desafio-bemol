@@ -4,8 +4,6 @@ namespace Database\Factories;
 
 use App\Models\ClienteModel;
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Illuminate\Support\Facades\Crypt;
-use Illuminate\Support\Facades\Hash;
 
 class ClienteModelFactory extends Factory
 {
@@ -25,12 +23,12 @@ class ClienteModelFactory extends Factory
     {
         return [
             'clie_nome_completo' => $this->faker->name(),
-            'clie_cpf' => Hash::make($this->faker->cpf(false)),
-            'clie_email' => Hash::make($this->faker->email()),
+            'clie_cpf' => $this->faker->cpf(false),
+            'clie_email' => $this->faker->email(),
             'clie_data_nascimento' => $this->faker->date('Y-m-d'),
-            'clie_celular' => Crypt::encryptString($this->faker->cellphoneNumber()),
+            'clie_celular' => $this->faker->cellphoneNumber(),
             'clie_cep' => $this->faker->postcode,
-            'clie_endereco' => $this->faker->address,
+            'clie_endereco' => $this->faker->streetAddress,
             'clie_complemento' => $this->faker->secondaryAddress,
             'clie_bairro' => $this->faker->citySuffix,
             'clie_municipio' => $this->faker->city,

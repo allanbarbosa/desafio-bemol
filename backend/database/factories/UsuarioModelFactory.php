@@ -24,9 +24,11 @@ class UsuarioModelFactory extends Factory
     public function definition()
     {
         return [
-            'usua_login' => Hash::make($this->faker->email),
+            'usua_login' => $this->faker->email,
             'usua_password' => Hash::make($this->faker->password()),
             'cliente_id' => ClienteModel::all()->random()->clie_id,
+            'usua_first_access' => true,
+            'usua_email_verified_at' => null
         ];
     }
 

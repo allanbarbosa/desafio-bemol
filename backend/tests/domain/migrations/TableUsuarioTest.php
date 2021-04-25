@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Tests\domain;
+namespace Tests\domain\migrations;
 
 use App\Models\ClienteModel;
 use App\Models\UsuarioModel;

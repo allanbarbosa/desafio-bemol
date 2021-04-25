@@ -15,7 +15,7 @@ class UsuarioModel extends Model
     protected $primaryKey = 'usua_id';
 
     protected $fillable = [
-        'usua_login', 'usua_password', 'cliente_id'
+        'usua_login', 'usua_password', 'cliente_id', 'usua_first_access'
     ];
 
     public function cliente()

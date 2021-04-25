@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Tests\domain;
+namespace Tests\domain\migrations;
 
 use App\Models\ChamadosModel;
 use App\Models\ClienteModel;
@@ -11,7 +11,7 @@ use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Support\Facades\Schema;
 use Tests\TestCase;
 
-class DatabaseExistsTests extends TestCase
+class TableClienteTest extends TestCase
 {
     use RefreshDatabase, WithFaker;
 

@@ -22,7 +22,7 @@ services:
       container_name: desafio-bemol-webserver
       working_dir: /application
       volumes:
-          - .:/application
+          - ./backend:/application
           - ./phpdocker/nginx/nginx.conf:/etc/nginx/conf.d/default.conf
       ports:
        - "8081:80"
