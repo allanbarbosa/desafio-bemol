@@ -1,0 +1,73 @@
+<div class="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+  <div class="mt-10 sm:mt-0">
+    <div>
+      <img class="mx-auto h-12 w-auto" src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg" alt="Workflow">
+      <h2 class="mt-6 text-center text-3xl font-extrabold text-gray-900">
+        Faça seu registro
+      </h2>
+    </div>
+    <form [formGroup]="formulario" (ngSubmit)="onSubmit()" action="#" method="POST" class="mt-8 space-y-6">
+      <div class="px-4 py-5 bg-white sm:p-6">
+        <div class="grid grid-cols-6 gap-6">
+          <div class="col-span-6 sm:col-span-3">
+            <label for="nome_completo" class="block text-sm font-medium text-gray-700">First name</label>
+            <input formControlName="nomeCompleto" type="text" name="nome_completo" id="nome_completo" autocomplete="given-name" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+          </div>
+
+          <div class="col-span-6 sm:col-span-3">
+            <label for="cpf" class="block text-sm font-medium text-gray-700">CPF</label>
+            <input formControlName="cpf" type="text" name="cpf" id="cpf" autocomplete="email" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+          </div>
+
+          <div class="col-span-6 sm:col-span-3">
+            <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+            <input formControlName="email" type="text" name="email" id="email" autocomplete="email" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+          </div>
+
+          <div class="col-span-6 sm:col-span-3">
+            <label for="data_nascimento" class="block text-sm font-medium text-gray-700">Data Nascimento</label>
+            <input formControlName="dataNascimento" type="date" name="data_nascimento" id="data_nascimento" autocomplete="data_nascimento" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+          </div>
+
+          <div class="col-span-6 sm:col-span-3">
+            <label for="celular" class="block text-sm font-medium text-gray-700">Celular</label>
+            <input formControlName="celular" type="tel" name="celular" id="celular" autocomplete="celular" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+          </div>
+
+          <div class="col-span-6 sm:col-span-3">
+            <label for="cep" class="block text-sm font-medium text-gray-700">CEP</label>
+            <input formControlName="cep" (change)="searchCep()" type="text" name="cep" id="cep" autocomplete="cep" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+          </div>
+
+          <div class="col-span-6">
+            <label for="endereco" class="block text-sm font-medium text-gray-700">Endereço</label>
+            <input formControlName="endereco" type="text" name="endereco" id="endereco" autocomplete="endereco" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+          </div>
+
+          <div class="col-span-6">
+            <label for="complemento" class="block text-sm font-medium text-gray-700">Complemento</label>
+            <input formControlName="complemento" type="text" name="complemento" id="complemento" autocomplete="complemento" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+          </div>
+
+          <div class="col-span-6 sm:col-span-3">
+            <label for="cidade" class="block text-sm font-medium text-gray-700">Cidade</label>
+            <input formControlName="cidade" type="text" name="cidade" id="cidade" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+          </div>
+
+          <div class="col-span-6 sm:col-span-3">
+            <label for="estado" class="block text-sm font-medium text-gray-700">Estado</label>
+            <input formControlName="estado" type="text" name="Estado" id="Estado" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+          </div>
+        </div>
+      </div>
+      <div class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
+        <button type="button" class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-green-600 text-base font-medium text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:ml-3 sm:w-auto sm:text-sm">
+          Salvar
+        </button>
+        <button type="button" class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm">
+          Voltar
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
