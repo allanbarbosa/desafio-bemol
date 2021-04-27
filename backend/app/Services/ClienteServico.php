@@ -51,7 +51,7 @@ class ClienteServico
             'endereco' => $clienteModel->clie_endereco,
             'complemento' => $clienteModel->clie_complemento,
             'bairro' => $clienteModel->clie_bairro,
-            'municipio' => $clienteModel->clie_municipio,
+            'cidade' => $clienteModel->clie_municipio,
             'estado' => $clienteModel->clie_estado
         ];
     }
@@ -68,7 +68,7 @@ class ClienteServico
             'clie_endereco' => $input['endereco'],
             'clie_complemento' => $input['complemento'],
             'clie_bairro' => $input['bairro'],
-            'clie_municipio' => $input['municipio'],
+            'clie_municipio' => $input['cidade'],
             'clie_estado' => $input['estado'],
         ];
     }
