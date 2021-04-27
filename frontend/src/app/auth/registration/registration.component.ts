@@ -1,3 +1,4 @@
+import { ViaCepService } from './../../services/viacep.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
@@ -11,7 +12,8 @@ export class RegistrationComponent implements OnInit {
   public formulario!: FormGroup;
 
   constructor(
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private viaCepService: ViaCepService
   ) { }
 
   ngOnInit(): void {
@@ -23,7 +25,19 @@ export class RegistrationComponent implements OnInit {
   }
 
   searchCep(): void {
-    console.log(this.formulario.value.cep);
+    const cep = this.formulario.value.cep.replace('-', '');
+    this.formulario.controls.endereco.setValue('Buscando endereço...');
+    this.viaCepService.get(cep).subscribe(
+      (viacep) => {
+        this.formulario.controls.endereco.setValue(viacep.logradouro);
+        this.formulario.controls.complemento.setValue(viacep.complemento);
+        this.formulario.controls.cidade.setValue(viacep.localidade);
+        this.formulario.controls.estado.setValue(viacep.uf);
+      },
+      (e) => {
+        console.log(e);
+      }
+    );
   }
 
   private inicializarFormulario(): void {
